@@ -30,11 +30,11 @@ docker container ls
 
 CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS         PORTS                    NAMES
 
-<...>   nginx:1.21.3              "/docker-entrypoint.…"   5 minutes ago   Up 4 minutes   0.0.0.0:80->80/tcp       infra_nginx_1
+<ID NUMBER>   nginx:1.21.3              "/docker-entrypoint.…"   5 minutes ago   Up 4 minutes   0.0.0.0:80->80/tcp       infra_nginx_1
 
-<...>    LWE57/infra_web:latest   "/bin/sh -c 'gunicor…"   5 minutes ago   Up 4 minutes   0.0.0.0:8000->8000/tcp   infra_web_1
+<ID NUMBER>     LWE57/infra_web:latest   "/bin/sh -c 'gunicor…"   5 minutes ago   Up 4 minutes   0.0.0.0:8000->8000/tcp   infra_web_1
 
-<...>    postgres:13.0             "docker-entrypoint.s…"   5 minutes ago   Up 4 minutes   5432/tcp                 infra_db_1
+<ID NUMBER>     postgres:13.0             "docker-entrypoint.s…"   5 minutes ago   Up 4 minutes   5432/tcp                 infra_db_1
 
 Нас интересует контейнер infra_web_1, заходим в него командой
 
