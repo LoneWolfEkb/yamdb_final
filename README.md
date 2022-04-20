@@ -1,4 +1,4 @@
-![workflow](https://github.com/LoneWolfEkb/yamdb_final/workflows/yamdb_workflow.yml/badge.svg)
+![workflow](https://github.com/LoneWolfEkb/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 Сайт - база отзывов о фильмах, книгах и музыке. Пользователи могут оставлять рецензии на произведения, а также комментировать эти рецензии. Администрация добавляет новые произведения и категории (книга, фильм, музыка и т.д.) Также присутствует файл docker-compose, позволяющий , быстро развернуть контейнер базы данных (PostgreSQL), контейнер проекта django + gunicorn и контейнер nginx
 
