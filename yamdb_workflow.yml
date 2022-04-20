@@ -62,7 +62,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            sudo docker pull lonewolfekb/yamdb_final
+            sudo docker pull lwe57/infra_web
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
