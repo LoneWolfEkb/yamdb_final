@@ -11,8 +11,8 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from reviews.filters import TitleFilter
 from reviews.models import Category, Comment, CustomUser, Genre, Review, Title
-
 from api_yamdb.settings import ADMIN_EMAIL
+
 from . import permissions
 from .mixins import CreateViewSet
 from .serializers import (AuthSerializer, CategoriesSerializer,
