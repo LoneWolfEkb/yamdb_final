@@ -47,7 +47,7 @@ jobs:
         with:
           push: true
           context: ./api_yamdb/
-          tags: lwe57/infra_web:latest
+          tags: lwe57/yamdb_final:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -62,6 +62,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
+            sudo docker pull lwe57/yamdb_final
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
