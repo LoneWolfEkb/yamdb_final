@@ -21,19 +21,26 @@ Docker-compose: https://docs.docker.com/compose/install/
 Для запуска необходимо из корневой папки проекта ввести в консоль(bash или zsh) команду:
 
 docker-compose up --build
+
 Затем узнать id контейнера, для этого вводим
 
 docker container ls
+
 В ответ получаем
 
 CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS         PORTS                    NAMES
+
 ab8cb8741e4a   nginx:1.21.3              "/docker-entrypoint.…"   7 minutes ago   Up 2 minutes   0.0.0.0:80->80/tcp       infra_nginx_1
+
 f78cc8f246fb   LWE57/infra_web:latest   "/bin/sh -c 'gunicor…"   7 minutes ago   Up 2 minutes   0.0.0.0:8000->8000/tcp   infra_web_1
+
 a68243a0a5e2   postgres:13.0             "docker-entrypoint.s…"   7 minutes ago   Up 2 minutes   5432/tcp                 infra_db_1
+
 Нас интересует контейнер infra_web_1, заходим в него командой
 
 docker exec -it <CONTAINER ID> sh
-И делаем миграцию БД, и сбор статики
+
+Делаем миграцию БД, и сбор статики
 
 python manage.py migrate
 python manage.py collectstatic
