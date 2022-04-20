@@ -46,7 +46,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: LoneWolfEkb/yamdb_final:latest
+          tags: lwe57/infra_web:latest
 
   deploy:
     runs-on: ubuntu-latest
