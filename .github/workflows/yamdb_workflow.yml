@@ -67,7 +67,7 @@ jobs:
             sudo docker-compose stop
             sudo docker-compose rm -f web
             sudo docker-compose rm -f nginx
-            sudo docker volume rm lwe57_static_value
+            sudo docker volume rm yapract57_static_value
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
