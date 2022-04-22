@@ -17,8 +17,6 @@ services:
       - db
     env_file:
       - ./.env
-    environment:
-      - DB_HOST=db
 
   nginx:
     image: nginx:1.21.3-alpine
