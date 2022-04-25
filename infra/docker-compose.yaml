@@ -18,7 +18,7 @@ services:
     env_file:
       - ./.env
     environment:
-      - DB_HOST=db
+      - DB_HOST=yapract57_db_1
 
   nginx:
     image: nginx:1.21.3-alpine
