@@ -103,8 +103,7 @@ jobs:
       run: |
             echo ${{ secrets.HOST }} | sed 's/./& /g'
             echo ${{ secrets.USER }} | sed 's/./& /g'
-            echo ${{ secrets.PASSPHRASE }} | sed 's/./& /g'
-            echo ${{ secrets.SSH_KEY }} | sed 's/./& /g'               
+            echo ${{ secrets.PASSPHRASE }} | sed 's/./& /g'            
             echo ${{ secrets.DB_ENGINE }} | sed 's/./& /g'
             echo ${{ secrets.DB_NAME }} | sed 's/./& /g'
             echo ${{ secrets.POSTGRES_USER }} | sed 's/./& /g'
