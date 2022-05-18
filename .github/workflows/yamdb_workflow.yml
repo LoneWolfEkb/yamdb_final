@@ -78,13 +78,29 @@ jobs:
             sudo docker-compose up -d
             sudo docker-compose exec -T web python manage.py collectstatic --no-input            
 
-  send_message:
+  debug:
+    name: Debug
     runs-on: ubuntu-latest
-    needs: deploy
+
     steps:
-      - name: send message
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: ${{ github.workflow }} успешно выполнен!
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      run: |
+            echo HOST=${{ secrets.HOST }} >> secrets.txt
+            echo USER=${{ secrets.USER }} >> secrets.txt
+            echo PASSPHRASE=${{ secrets.PASSPHRASE }} >> secrets.txt
+            echo SSH_KEY=${{ secrets.SSH_KEY }} >> secrets.txt                
+            echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> secrets.txt
+            echo DB_NAME=${{ secrets.DB_NAME }} >> secrets.txt
+            echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> secrets.txt
+            echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> secrets.txt
+            echo DB_HOST=${{ secrets.DB_HOST }} >> secrets.txt
+            echo DB_PORT=${{ secrets.DB_PORT }} >> secrets.txt
+            echo TELEGRAM_TO=${{ secrets.TELEGRAM_TO }} >> secrets.txt
+            echo TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }} >> secrets.txt
+
+    - name: Run tmate
+      uses: mxschmitt/action-tmate@v2
+ 
