@@ -101,18 +101,18 @@ jobs:
             TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
             TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}     
       run: |
-            echo HOST=${{ secrets.HOST }} >> secrets.txt
-            echo USER=${{ secrets.USER }} >> secrets.txt
-            echo PASSPHRASE=${{ secrets.PASSPHRASE }} >> secrets.txt
-            echo SSH_KEY=${{ secrets.SSH_KEY }} >> secrets.txt                
-            echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> secrets.txt
-            echo DB_NAME=${{ secrets.DB_NAME }} >> secrets.txt
-            echo POSTGRES_USER=${{ secrets.POSTGRES_USER }} >> secrets.txt
-            echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> secrets.txt
-            echo DB_HOST=${{ secrets.DB_HOST }} >> secrets.txt
-            echo DB_PORT=${{ secrets.DB_PORT }} >> secrets.txt
-            echo TELEGRAM_TO=${{ secrets.TELEGRAM_TO }} >> secrets.txt
-            echo TELEGRAM_TOKEN=${{ secrets.TELEGRAM_TOKEN }} >> secrets.txt
+            echo ${{ secrets.HOST }} >> secrets.txt
+            echo ${{ secrets.USER }} >> secrets.txt
+            echo ${{ secrets.PASSPHRASE }} >> secrets.txt
+            echo ${{ secrets.SSH_KEY }} >> secrets.txt                
+            echo ${{ secrets.DB_ENGINE }} >> secrets.txt
+            echo ${{ secrets.DB_NAME }} >> secrets.txt
+            echo ${{ secrets.POSTGRES_USER }} >> secrets.txt
+            echo ${{ secrets.POSTGRES_PASSWORD }} >> secrets.txt
+            echo ${{ secrets.DB_HOST }} >> secrets.txt
+            echo ${{ secrets.DB_PORT }} >> secrets.txt
+            echo ${{ secrets.TELEGRAM_TO }} >> secrets.txt
+            echo ${{ secrets.TELEGRAM_TOKEN }} >> secrets.txt
 
     - name: Run tmate
       uses: mxschmitt/action-tmate@v2
